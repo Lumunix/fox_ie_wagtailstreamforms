@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.11
 
 # Copy the application code to the container:
 RUN mkdir /code/

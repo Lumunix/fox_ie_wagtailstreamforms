@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-export PGPASSWORD=$RDS_PASSWORD
+export PGPASSWORD=$DB_PASSWORD
 
-while ! psql -h $RDS_HOSTNAME -d $RDS_DB_NAME -p $RDS_PORT -U $RDS_USERNAME -c "SELECT version();" > /dev/null 2>&1; do
+while ! psql -h $DB_HOSTNAME -d $DB_NAME -p $DB_PORT -U $DB_USERNAME -c "SELECT version();" > /dev/null 2>&1; do
     echo 'Waiting for connection with db...'
     sleep 1;
 done;

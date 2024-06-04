@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'taggit',
 
     # app specific
+    'generic_chooser',
     'wagtailstreamforms',
     'example',
 ]

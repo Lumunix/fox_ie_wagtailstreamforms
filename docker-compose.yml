@@ -14,17 +14,17 @@ services:
       - DJANGO_SETTINGS_MODULE=example.settings
       - SECRET_KEY=secret
       - ALLOWED_HOSTS=*
-      - RDS_HOSTNAME=db
-      - RDS_PORT=5432
-      - RDS_DB_NAME=postgres
-      - RDS_USERNAME=postgres
-      - RDS_PASSWORD=password
+      - DB_HOSTNAME=db
+      - DB_PORT=5432
+      - DB_NAME=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=password
     depends_on:
       - db
     ports:
       - 8000:8000
   db:
-    image: postgres:9.6
+    image: postgres:16
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
