@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 from wagtail import blocks
 from wagtail.fields import StreamField
 
-from wagtailstreamforms.fields import BaseField, get_fields
+from fox_ie_wagtailstreamforms.fields import BaseField, get_fields
 
 
 class FormFieldStreamBlock(blocks.StreamBlock):

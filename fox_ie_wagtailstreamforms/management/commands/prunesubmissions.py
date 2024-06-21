@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 from django.core.management.base import BaseCommand
 
-from wagtailstreamforms.models import FormSubmission
+from fox_ie_wagtailstreamforms.models import FormSubmission
 
 
 class Command(BaseCommand):

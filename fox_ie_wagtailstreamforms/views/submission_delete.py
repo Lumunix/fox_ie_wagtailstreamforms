@@ -6,7 +6,7 @@ from django.utils.translation import ngettext
 from django.views.generic import DeleteView
 from wagtail_modeladmin.helpers import PermissionHelper
 
-from wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.models import Form
 
 
 class SubmissionDeleteView(DeleteView):
@@ -70,4 +70,4 @@ class SubmissionDeleteView(DeleteView):
         )
 
     def get_success_url(self):
-        return reverse("wagtailstreamforms:streamforms_submissions", kwargs={"pk": self.object.pk})
+        return reverse("fox_ie_wagtailstreamforms:streamforms_submissions", kwargs={"pk": self.object.pk})

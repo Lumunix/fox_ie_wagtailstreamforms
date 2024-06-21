@@ -4,9 +4,9 @@ import django.db.models.deletion
 from django.db import migrations, models
 from wagtail import blocks
 
-import wagtailstreamforms.conf
-import wagtailstreamforms.fields
-import wagtailstreamforms.streamfield
+import fox_ie_wagtailstreamforms.conf
+import fox_ie_wagtailstreamforms.fields
+import fox_ie_wagtailstreamforms.streamfield
 
 
 class Migration(migrations.Migration):
@@ -41,14 +41,14 @@ class Migration(migrations.Migration):
                 (
                     "template_name",
                     models.CharField(
-                        choices=wagtailstreamforms.conf.get_setting("FORM_TEMPLATES"),
+                        choices=fox_ie_wagtailstreamforms.conf.get_setting("FORM_TEMPLATES"),
                         max_length=255,
                         verbose_name="Template",
                     ),
                 ),
                 (
                     "fields",
-                    wagtailstreamforms.streamfield.FormFieldsStreamField(
+                    fox_ie_wagtailstreamforms.streamfield.FormFieldsStreamField(
                         [
                             (
                                 "singleline",
@@ -468,7 +468,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "process_form_submission_hooks",
-                    wagtailstreamforms.fields.HookSelectField(
+                    fox_ie_wagtailstreamforms.fields.HookSelectField(
                         blank=True, verbose_name="Submission hooks"
                     ),
                 ),
@@ -512,7 +512,7 @@ class Migration(migrations.Migration):
                     "form",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="wagtailstreamforms.Form",
+                        to="fox_ie_wagtailstreamforms.Form",
                         verbose_name="Form",
                     ),
                 ),
@@ -541,7 +541,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="files",
-                        to="wagtailstreamforms.FormSubmission",
+                        to="fox_ie_wagtailstreamforms.FormSubmission",
                         verbose_name="Submission",
                     ),
                 ),

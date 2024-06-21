@@ -12,11 +12,11 @@ from wagtail_modeladmin.helpers import AdminURLHelper, ButtonHelper
 from wagtail_modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail_modeladmin.views import CreateView, DeleteView, EditView, InspectView
 
-from wagtailstreamforms import hooks as form_hooks
-from wagtailstreamforms.conf import get_setting
-from wagtailstreamforms.models import Form
-from wagtailstreamforms.utils.loading import get_advanced_settings_model
-from wagtailstreamforms.utils.requests import get_form_instance_from_request
+from fox_ie_wagtailstreamforms import hooks as form_hooks
+from fox_ie_wagtailstreamforms.conf import get_setting
+from fox_ie_wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.utils.loading import get_advanced_settings_model
+from fox_ie_wagtailstreamforms.utils.requests import get_form_instance_from_request
 
 SettingsModel = get_advanced_settings_model()
 
@@ -24,7 +24,7 @@ SettingsModel = get_advanced_settings_model()
 class FormURLHelper(AdminURLHelper):
     def get_action_url(self, action, *args, **kwargs):
         if action in ["advanced", "copy", "submissions"]:
-            return reverse("wagtailstreamforms:streamforms_%s" % action, args=args, kwargs=kwargs)
+            return reverse("fox_ie_wagtailstreamforms:streamforms_%s" % action, args=args, kwargs=kwargs)
 
         return super().get_action_url(action, *args, **kwargs)
 
@@ -90,7 +90,7 @@ class FormButtonHelper(ButtonHelper):
 
 
 class InstanceSpecificViewHookMixin:
-    """Mixin class responsible to apply wagtailstreamforms specific hooks."""
+    """Mixin class responsible to apply fox_ie_wagtailstreamforms specific hooks."""
 
     def dispatch(self, request, *args, **kwargs):
         for fn in form_hooks.get_hooks("before_inspect_form_instance_dispatch"):
@@ -173,9 +173,9 @@ class FormModelAdmin(ModelAdmin):
 
 @hooks.register("register_admin_urls")
 def register_admin_urls():
-    from wagtailstreamforms import urls
+    from fox_ie_wagtailstreamforms import urls
 
-    return [path("wagtailstreamforms/", include((urls, "wagtailstreamforms")))]
+    return [path("fox_ie_wagtailstreamforms/", include((urls, "fox_ie_wagtailstreamforms")))]
 
 
 @hooks.register("before_serve_page")
@@ -245,5 +245,5 @@ class WagtailStreamFormsChooser(AdminChooser):
 @hooks.register("register_admin_viewset")
 def register_wagtailstreamforms_chooser_viewset():
     return WagtailStreamFormsChooserViewSet(
-        "wagtailstreamforms_chooser", url_prefix="wagtailstreamforms-chooser"
+        "wagtailstreamforms_chooser", url_prefix="fox_ie_wagtailstreamforms-chooser"
     )

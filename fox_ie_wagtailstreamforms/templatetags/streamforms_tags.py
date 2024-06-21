@@ -3,8 +3,8 @@ from urllib.parse import urlencode
 from django.template import Library
 from django.utils.safestring import mark_safe
 
-from wagtailstreamforms.blocks import WagtailFormBlock
-from wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.blocks import WagtailFormBlock
+from fox_ie_wagtailstreamforms.models import Form
 
 register = Library()
 

@@ -3,8 +3,8 @@ from django.test import override_settings
 from django.test.client import Client
 from wagtail.models import Page
 
-from wagtailstreamforms.models import Form
-from wagtailstreamforms.wagtail_hooks import process_form
+from fox_ie_wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.wagtail_hooks import process_form
 
 from ..test_case import AppTestCase
 

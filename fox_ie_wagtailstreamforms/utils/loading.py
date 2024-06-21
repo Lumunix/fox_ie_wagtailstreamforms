@@ -1,8 +1,8 @@
 from django.apps import apps
 from django.core.exceptions import ImproperlyConfigured
 
-from wagtailstreamforms.conf import get_setting
-from wagtailstreamforms.models import AbstractFormSetting
+from fox_ie_wagtailstreamforms.conf import get_setting
+from fox_ie_wagtailstreamforms.models import AbstractFormSetting
 
 
 def get_advanced_settings_model():
@@ -23,7 +23,7 @@ def get_advanced_settings_model():
         model_class = apps.get_model(model, require_ready=False)
         if issubclass(model_class, AbstractFormSetting):
             return model_class
-        raise_error("must inherit from 'wagtailstreamforms.models.AbstractFormSetting'")
+        raise_error("must inherit from 'fox_ie_wagtailstreamforms.models.AbstractFormSetting'")
     except ValueError:
         raise_error("must be of the form 'app_label.model_name'")
     except LookupError:

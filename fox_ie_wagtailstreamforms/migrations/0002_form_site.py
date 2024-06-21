@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [("wagtailstreamforms", "0001_initial")]
+    dependencies = [("fox_ie_wagtailstreamforms", "0001_initial")]
 
     operations = [
         migrations.AddField(

@@ -3,7 +3,7 @@ from collections import OrderedDict
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from wagtailstreamforms.fields import get_fields
+from fox_ie_wagtailstreamforms.fields import get_fields
 
 
 class BaseForm(forms.Form):

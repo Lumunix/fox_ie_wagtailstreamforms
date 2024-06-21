@@ -2,9 +2,9 @@ import json
 
 from django.template.defaultfilters import pluralize
 
-from wagtailstreamforms.hooks import register
-from wagtailstreamforms.models import FormSubmissionFile
-from wagtailstreamforms.serializers import FormSubmissionSerializer
+from fox_ie_wagtailstreamforms.hooks import register
+from fox_ie_wagtailstreamforms.models import FormSubmissionFile
+from fox_ie_wagtailstreamforms.serializers import FormSubmissionSerializer
 
 
 @register("process_form_submission")

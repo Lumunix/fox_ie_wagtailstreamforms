@@ -3,7 +3,7 @@ from django.db import models
 
 class AbstractFormSetting(models.Model):
     form = models.OneToOneField(
-        "wagtailstreamforms.Form",
+        "fox_ie_wagtailstreamforms.Form",
         on_delete=models.CASCADE,
         related_name="advanced_settings",
     )

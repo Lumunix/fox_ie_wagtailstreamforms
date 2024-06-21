@@ -9,9 +9,9 @@ from django.views.generic import ListView
 from django.views.generic.detail import SingleObjectMixin
 from wagtail_modeladmin.helpers import PermissionHelper
 
-from wagtailstreamforms import hooks
-from wagtailstreamforms.forms import SelectDateForm
-from wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms import hooks
+from fox_ie_wagtailstreamforms.forms import SelectDateForm
+from fox_ie_wagtailstreamforms.models import Form
 
 
 class SubmissionListView(SingleObjectMixin, ListView):

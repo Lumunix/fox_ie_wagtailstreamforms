@@ -13,14 +13,14 @@ def get_form_model_string():
     Useful for developers making Wagtail plugins that need to refer to the
     form model, such as in foreign keys, but the model itself is not required.
     """
-    return getattr(settings, "WAGTAILSTREAMFORMS_FORM_MODEL", "wagtailstreamforms.Form")
+    return getattr(settings, "WAGTAILSTREAMFORMS_FORM_MODEL", "fox_ie_wagtailstreamforms.Form")
 
 
 def get_form_model():
     """
     Get the form model from the ``WAGTAILSTREAMFORMS_FORM_MODEL`` setting.
     Useful for developers making Wagtail plugins that need the form model.
-    Defaults to the standard :class:`~wagtailstreamforms.Form` model
+    Defaults to the standard :class:`~fox_ie_wagtailstreamforms.Form` model
     if no custom model is defined.
     """
     from django.apps import apps

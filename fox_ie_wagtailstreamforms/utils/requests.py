@@ -1,4 +1,4 @@
-from wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.models import Form
 
 
 def get_form_instance_from_request(request):

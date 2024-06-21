@@ -13,13 +13,13 @@ from wagtail.admin.panels import (
 )
 from wagtail.models import Site
 
-from wagtailstreamforms import hooks
-from wagtailstreamforms.conf import get_setting
-from wagtailstreamforms.fields import HookSelectField
-from wagtailstreamforms.forms import FormBuilder
-from wagtailstreamforms.streamfield import FormFieldsStreamField
-from wagtailstreamforms.utils.general import get_slug_from_string
-from wagtailstreamforms.utils.loading import get_advanced_settings_model
+from fox_ie_wagtailstreamforms import hooks
+from fox_ie_wagtailstreamforms.conf import get_setting
+from fox_ie_wagtailstreamforms.fields import HookSelectField
+from fox_ie_wagtailstreamforms.forms import FormBuilder
+from fox_ie_wagtailstreamforms.streamfield import FormFieldsStreamField
+from fox_ie_wagtailstreamforms.utils.general import get_slug_from_string
+from fox_ie_wagtailstreamforms.utils.loading import get_advanced_settings_model
 
 from .submission import FormSubmission
 

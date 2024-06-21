@@ -1,7 +1,7 @@
 from operator import itemgetter
 
-from wagtailstreamforms.conf import get_setting
-from wagtailstreamforms.utils.apps import get_app_submodules
+from fox_ie_wagtailstreamforms.conf import get_setting
+from fox_ie_wagtailstreamforms.utils.apps import get_app_submodules
 
 _hooks = {}
 
@@ -49,7 +49,7 @@ def get_hooks(hook_name):
     hooks = _hooks.get(hook_name, [])
     hooks = sorted(hooks, key=itemgetter(1))
     fncs = []
-    builtin_hook_modules = ["wagtailstreamforms.wagtailstreamforms_hooks"]
+    builtin_hook_modules = ["fox_ie_wagtailstreamforms.wagtailstreamforms_hooks"]
     builtin_enabled = get_setting("ENABLE_BUILTIN_HOOKS")
 
     for fn, _ in hooks:

@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.test import override_settings
 
 from tests.models import ValidFormSettingsModel
-from wagtailstreamforms.utils.loading import get_advanced_settings_model
+from fox_ie_wagtailstreamforms.utils.loading import get_advanced_settings_model
 
 from .test_case import AppTestCase
 
@@ -26,7 +26,7 @@ class AdvancedSettingsTests(AppTestCase):
 
     @override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL="tests.InvalidFormSettingsModel")
     def test_invalid_model_inheritance(self):
-        msg = "must inherit from 'wagtailstreamforms.models.AbstractFormSetting'"
+        msg = "must inherit from 'fox_ie_wagtailstreamforms.models.AbstractFormSetting'"
         with self.assertRaisesMessage(ImproperlyConfigured, msg):
             get_advanced_settings_model()
 

@@ -4,9 +4,9 @@ from django.db import models
 from django.utils.text import capfirst
 from wagtail import blocks
 
-from wagtailstreamforms import hooks
-from wagtailstreamforms.utils.apps import get_app_submodules
-from wagtailstreamforms.utils.general import get_slug_from_string
+from fox_ie_wagtailstreamforms import hooks
+from fox_ie_wagtailstreamforms.utils.apps import get_app_submodules
+from fox_ie_wagtailstreamforms.utils.general import get_slug_from_string
 
 _fields = {}
 _searched_for_fields = False

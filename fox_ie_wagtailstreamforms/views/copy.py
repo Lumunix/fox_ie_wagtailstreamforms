@@ -6,8 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic.detail import BaseDetailView, SingleObjectTemplateResponseMixin
 from wagtail_modeladmin.helpers import PermissionHelper
 
-from wagtailstreamforms.models import Form
-from wagtailstreamforms.wagtail_hooks import FormURLHelper
+from fox_ie_wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.wagtail_hooks import FormURLHelper
 
 
 class CopyForm(forms.Form):

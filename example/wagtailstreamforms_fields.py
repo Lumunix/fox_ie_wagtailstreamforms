@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django_recaptcha.fields import ReCaptchaField
 
 from wagtail import blocks
-from wagtailstreamforms.fields import BaseField, register
+from fox_ie_wagtailstreamforms.fields import BaseField, register
 
 
 @register('recaptcha')
