@@ -1,7 +1,7 @@
 from django.contrib.auth.models import Permission, User
 from django.urls import reverse
 
-from wagtailstreamforms.models import Form, FormSubmission
+from fox_ie_wagtailstreamforms.models import Form, FormSubmission
 
 from ..test_case import AppTestCase
 
@@ -17,18 +17,18 @@ class DeleteViewTestCase(AppTestCase):
         FormSubmission.objects.create(form=form, form_data='{"foo":1}')
 
         delete_url = reverse(
-            "wagtailstreamforms:streamforms_delete_submissions", kwargs={"pk": form.pk}
+            "fox_ie_wagtailstreamforms:streamforms_delete_submissions", kwargs={"pk": form.pk}
         )
 
         self.invalid_delete_url = reverse(
-            "wagtailstreamforms:streamforms_delete_submissions", kwargs={"pk": 100}
+            "fox_ie_wagtailstreamforms:streamforms_delete_submissions", kwargs={"pk": 100}
         )
         self.single_url = "{}?selected-submissions={}".format(delete_url, s1.pk)
         self.multiple_url = "{}?selected-submissions={}&selected-submissions={}".format(
             delete_url, s1.pk, s2.pk
         )
         self.redirect_url = reverse(
-            "wagtailstreamforms:streamforms_submissions", kwargs={"pk": form.pk}
+            "fox_ie_wagtailstreamforms:streamforms_submissions", kwargs={"pk": form.pk}
         )
 
         self.client.login(username="user", password="password")
@@ -79,7 +79,7 @@ class DeleteViewPermissionTestCase(AppTestCase):
 
         self.delete_url = "{}?selected-submissions={}".format(
             reverse(
-                "wagtailstreamforms:streamforms_delete_submissions",
+                "fox_ie_wagtailstreamforms:streamforms_delete_submissions",
                 kwargs={"pk": self.form.pk},
             ),
             self.form_submission.pk,
@@ -88,7 +88,7 @@ class DeleteViewPermissionTestCase(AppTestCase):
     def test_no_user_no_access(self):
         response = self.client.get(self.delete_url)
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(response.url.startswith("/cms/login/?next=/cms/wagtailstreamforms"))
+        self.assertTrue(response.url.startswith("/cms/login/?next=/cms/fox_ie_wagtailstreamforms"))
 
     def test_user_with_no_perm_no_access(self):
         access_admin = Permission.objects.get(codename="access_admin")

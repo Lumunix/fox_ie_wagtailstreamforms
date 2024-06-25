@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template.defaultfilters import pluralize
 
-from wagtailstreamforms.hooks import register
+from fox_ie_wagtailstreamforms.hooks import register
 
 
 @register('process_form_submission')

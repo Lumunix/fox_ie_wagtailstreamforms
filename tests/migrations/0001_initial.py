@@ -3,13 +3,13 @@
 import django.db.models.deletion
 from django.db import migrations, models
 
-import wagtailstreamforms.fields
+import fox_ie_wagtailstreamforms.fields
 
 
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [("wagtailstreamforms", "0001_initial")]
+    dependencies = [("fox_ie_wagtailstreamforms", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "hooks",
-                    wagtailstreamforms.fields.HookSelectField(
+                    fox_ie_wagtailstreamforms.fields.HookSelectField(
                         blank=True, help_text="Some hooks", null=True
                     ),
                 ),
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                     models.OneToOneField(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="advanced_settings",
-                        to="wagtailstreamforms.Form",
+                        to="fox_ie_wagtailstreamforms.Form",
                     ),
                 ),
             ],

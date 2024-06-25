@@ -4,8 +4,8 @@ from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
-from wagtailstreamforms.blocks import WagtailFormBlock
-from wagtailstreamforms.models.abstract import AbstractFormSetting
+from fox_ie_wagtailstreamforms.blocks import WagtailFormBlock
+from fox_ie_wagtailstreamforms.models.abstract import AbstractFormSetting
 
 
 class AdvancedFormSetting(AbstractFormSetting):

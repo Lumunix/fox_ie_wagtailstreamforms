@@ -17,25 +17,25 @@ class AdminListViewTestCase(AppTestCase):
 
     def test_get_responds(self):
         self.user.user_permissions.add(self.access_admin, self.add_perm)
-        response = self.client.get("/cms/wagtailstreamforms/form/")
+        response = self.client.get("/cms/fox_ie_wagtailstreamforms/form/")
         self.assertEqual(response.status_code, 200)
 
     def test_copy_button_uses_add_perm(self):
         self.user.user_permissions.add(self.access_admin, self.change_perm)
 
-        response = self.client.get("/cms/wagtailstreamforms/form/")
+        response = self.client.get("/cms/fox_ie_wagtailstreamforms/form/")
         self.assertEqual(response.status_code, 200)
         self.assertNotIn('title="Copy this form">Copy</a>', str(response.content))
 
         self.user.user_permissions.add(self.access_admin, self.add_perm)
 
-        response = self.client.get("/cms/wagtailstreamforms/form/")
+        response = self.client.get("/cms/fox_ie_wagtailstreamforms/form/")
         self.assertEqual(response.status_code, 200)
         self.assertIn('title="Copy this form">Copy</a>', str(response.content))
 
     @override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
     def test_advanced_button_enabled_when_setup(self):
-        url = "/cms/wagtailstreamforms/form/"
+        url = "/cms/fox_ie_wagtailstreamforms/form/"
         expected_html = 'title="Advanced settings">Advanced</a>'
 
         # disabled with delete perm

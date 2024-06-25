@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import Permission, User
 from django.urls import reverse
 
-from wagtailstreamforms.models import Form, FormSubmission
+from fox_ie_wagtailstreamforms.models import Form, FormSubmission
 
 from ..test_case import AppTestCase
 
@@ -24,10 +24,10 @@ class SubmissionListViewTestCase(AppTestCase):
         FormSubmission.objects.create(form=form, form_data='{"foo":1}')
 
         self.list_url = reverse(
-            "wagtailstreamforms:streamforms_submissions", kwargs={"pk": form.pk}
+            "fox_ie_wagtailstreamforms:streamforms_submissions", kwargs={"pk": form.pk}
         )
         self.invalid_list_url = reverse(
-            "wagtailstreamforms:streamforms_submissions", kwargs={"pk": 100}
+            "fox_ie_wagtailstreamforms:streamforms_submissions", kwargs={"pk": 100}
         )
         self.filter_url = "{}?date_from=2017-01-01&date_to=2017-01-02&action=filter".format(
             self.list_url
@@ -74,13 +74,13 @@ class ListViewPermissionTestCase(AppTestCase):
         self.user = User.objects.create_user("user", "user@test.com", "password")
         self.form = Form.objects.get(pk=1)
         self.list_url = reverse(
-            "wagtailstreamforms:streamforms_submissions", kwargs={"pk": self.form.pk}
+            "fox_ie_wagtailstreamforms:streamforms_submissions", kwargs={"pk": self.form.pk}
         )
 
     def test_no_user_no_access(self):
         response = self.client.get(self.list_url)
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(response.url.startswith("/cms/login/?next=/cms/wagtailstreamforms"))
+        self.assertTrue(response.url.startswith("/cms/login/?next=/cms/fox_ie_wagtailstreamforms"))
 
     def test_user_with_no_perm_no_access(self):
         access_admin = Permission.objects.get(codename="access_admin")

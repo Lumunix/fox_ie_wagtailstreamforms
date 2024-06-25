@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
     # app specific
     'generic_chooser',
-    'wagtailstreamforms',
+    'fox_ie_wagtailstreamforms',
     'example',
 ]
 

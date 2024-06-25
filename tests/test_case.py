@@ -29,7 +29,7 @@ class AppTestCase(TestCase):
 
     @contextmanager
     def register_field(self, field_type, cls):
-        from wagtailstreamforms import fields
+        from fox_ie_wagtailstreamforms import fields
 
         fields.register(field_type, cls)
         try:
@@ -39,7 +39,7 @@ class AppTestCase(TestCase):
 
     @contextmanager
     def register_hook(self, hook_name, fn, order=0):
-        from wagtailstreamforms import hooks
+        from fox_ie_wagtailstreamforms import hooks
 
         hooks.register(hook_name, fn, order)
         try:

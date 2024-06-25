@@ -1,7 +1,7 @@
 from django.conf import settings
 
-from wagtailstreamforms.blocks import WagtailFormBlock
-from wagtailstreamforms.models import Form
+from fox_ie_wagtailstreamforms.blocks import WagtailFormBlock
+from fox_ie_wagtailstreamforms.models import Form
 
 from ..test_case import AppTestCase
 

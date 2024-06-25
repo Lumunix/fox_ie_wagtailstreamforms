@@ -4,7 +4,7 @@ from datetime import date, datetime
 from django.contrib.auth.models import User
 
 from tests.test_case import AppTestCase
-from wagtailstreamforms.serializers import FormSubmissionSerializer
+from fox_ie_wagtailstreamforms.serializers import FormSubmissionSerializer
 
 
 class TestSerializer(AppTestCase):

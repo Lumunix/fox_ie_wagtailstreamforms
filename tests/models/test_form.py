@@ -4,9 +4,9 @@ from django.test import override_settings
 from django.utils.translation import gettext_lazy as _
 from wagtail.models import Page
 
-from wagtailstreamforms.conf import get_setting
-from wagtailstreamforms.fields import HookSelectField
-from wagtailstreamforms.models import Form, FormSubmission
+from fox_ie_wagtailstreamforms.conf import get_setting
+from fox_ie_wagtailstreamforms.fields import HookSelectField
+from fox_ie_wagtailstreamforms.models import Form, FormSubmission
 
 from ..test_case import AppTestCase
 
@@ -122,7 +122,7 @@ class ModelPropertyTests(AppTestCase):
 
     @override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
     def test_copy_copies_advanced_settings(self):
-        from wagtailstreamforms.utils.loading import get_advanced_settings_model
+        from fox_ie_wagtailstreamforms.utils.loading import get_advanced_settings_model
 
         SettingsModel = get_advanced_settings_model()
 
