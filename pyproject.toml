@@ -13,6 +13,7 @@ wagtail = ">=5.2,<=6.1.2"
 Unidecode = ">=0.04.14,<2.0"
 wagtail-generic-chooser = ">=0.5.0,<0.7"
 
+
 [tool.poetry.dev-dependencies]
 sphinxcontrib-spelling = ">=2.3.0"
 sphinx = ">=1.5.2"
@@ -25,6 +26,10 @@ isort = {version = "==4.3.21", extras = ["pyproject"]}
 flake8 = "==3.7.9"
 flake8-blind-except = "==0.1.1"
 flake8-debugger = "3.1.0"
+wagtail-modeladmin = "^2.0.0"
+django-recaptcha = "^4.0.0"
+psycopg2-binary = "^2.9.9"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
