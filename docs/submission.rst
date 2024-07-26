@@ -2,7 +2,7 @@ Submission Methods
 ==================
 
 Form submissions are handled by the means of a wagtail ``before_serve_page`` hook. The built in hook at
-``wagtailstreamforms.wagtail_hooks.process_form`` looks for a form in the post request,
+``wagtailforms.wagtail_hooks.process_form`` looks for a form in the post request,
 and either:
 
 * processes it redirecting back to the current page or defined page in the form setup.
@@ -18,18 +18,18 @@ Providing your own submission method
 ------------------------------------
 
 If you do not want the current hook to be used you need to disable it by setting the
-``WAGTAILSTREAMFORMS_ENABLE_FORM_PROCESSING`` to ``False`` in your settings:
+``WAGTAILFORMS_ENABLE_FORM_PROCESSING`` to ``False`` in your settings:
 
 .. code-block:: python
 
-    WAGTAILSTREAMFORMS_ENABLE_FORM_PROCESSING = False
+    WAGTAILFORMS_ENABLE_FORM_PROCESSING = False
 
 With this set no forms will be processed of any kind and you are free to process them how you feel fit.
 
 A basic hook example
 ~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../wagtailstreamforms/wagtail_hooks.py
+.. literalinclude:: ../wagtailforms/wagtail_hooks.py
    :pyobject: process_form
 
 Supporting ajax requests
@@ -76,10 +76,10 @@ Add some javascript somewhere to process the form via ajax:
 
 ::
 
-    <form id="id_streamforms_{{ form.initial.form_reference }}">...</form>
+    <form id="id_forms_{{ form.initial.form_reference }}">...</form>
 
     <script>
-        $("#id_streamforms_{{ form.initial.form_reference }}").submit(function(e) {
+        $("#id_forms_{{ form.initial.form_reference }}").submit(function(e) {
           e.preventDefault();
           var data = new FormData($(this).get(0));
           $.ajax({

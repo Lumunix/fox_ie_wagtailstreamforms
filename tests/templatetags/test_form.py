@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from fox_ie_wagtailstreamforms.models import Form
+from wagtailforms.models import Form
 
 from ..test_case import AppTestCase
 
@@ -16,7 +16,7 @@ class TemplateTagTests(AppTestCase):
 
         fake_request = self.rf.get("/")
         html = self.render_template(
-            """{% load streamforms_tags %}{% streamforms_form "basic-form" "some-ref" "." %}""",
+            """{% load forms_tags %}{% forms_form "basic-form" "some-ref" "." %}""",
             {"request": fake_request},
         )
 
@@ -124,7 +124,7 @@ class TemplateTagTests(AppTestCase):
     def test_invalid_slug_renders_empty_content(self):
         fake_request = self.rf.get("/")
         html = self.render_template(
-            """{% load streamforms_tags %}{% streamforms_form "non-existing-slug" "some-ref" "." %}""",
+            """{% load forms_tags %}{% forms_form "non-existing-slug" "some-ref" "." %}""",
             {"request": fake_request},
         )
 

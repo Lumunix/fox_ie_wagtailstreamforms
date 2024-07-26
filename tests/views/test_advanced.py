@@ -2,13 +2,13 @@ from django.contrib.auth.models import User
 from django.test import override_settings
 from django.urls import reverse
 
-from fox_ie_wagtailstreamforms.models import Form
-from fox_ie_wagtailstreamforms.wagtail_hooks import FormURLHelper
+from wagtailforms.models import Form
+from wagtailforms.wagtail_hooks import FormURLHelper
 
 from ..test_case import AppTestCase
 
 
-@override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
+@override_settings(WAGTAILFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
 class AdvancedSettingsViewTestCase(AppTestCase):
     fixtures = ["test.json"]
 
@@ -16,7 +16,7 @@ class AdvancedSettingsViewTestCase(AppTestCase):
         User.objects.create_superuser("user", "user@test.com", "password")
         self.form = Form.objects.get(pk=1)
         self.advanced_url = reverse(
-            "fox_ie_wagtailstreamforms:streamforms_advanced", kwargs={"pk": self.form.pk}
+            "wagtailforms:forms_advanced", kwargs={"pk": self.form.pk}
         )
         self.client.login(username="user", password="password")
 

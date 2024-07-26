@@ -8,4 +8,4 @@ dist
 htmlcov
 images
 node_modules
-wagtailstreamforms.egg-info
+wagtailforms.egg-info

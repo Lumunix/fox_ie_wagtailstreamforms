@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
     # app specific
     'generic_chooser',
-    'fox_ie_wagtailstreamforms',
+    'wagtailforms',
     'example',
 ]
 
@@ -147,7 +147,7 @@ WAGTAILADMIN_BASE_URL = "/"
 
 # Forms
 
-WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL = 'example.AdvancedFormSetting'
+WAGTAILFORMS_ADVANCED_SETTINGS_MODEL = 'example.AdvancedFormSetting'
 
 
 # ReCAPTCHA

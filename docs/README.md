@@ -1,4 +1,4 @@
-# Wagtail Streamforms docs
+# Wagtail Forms docs
 
 These are Sphinx docs, automatically built when the master branch is committed to Github. To build them locally, install the development requirements:
 

@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = wagtailstreamforms
+source = wagtailforms
 omit =
     */migrations/*
 parallel = true

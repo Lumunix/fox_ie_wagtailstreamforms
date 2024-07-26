@@ -1,7 +1,7 @@
 from django.test import override_settings
 
-from fox_ie_wagtailstreamforms import hooks
-from fox_ie_wagtailstreamforms.wagtailstreamforms_hooks import save_form_submission_data
+from wagtailforms import hooks
+from wagtailforms.wagtailforms_hooks import save_form_submission_data
 
 from ..test_case import AppTestCase
 
@@ -41,12 +41,12 @@ class TestHookDefaults(AppTestCase):
         hook_fns = hooks.get_hooks("process_form_submission")
         self.assertEqual(hook_fns, [save_form_submission_data])
 
-    @override_settings(WAGTAILSTREAMFORMS_ENABLE_BUILTIN_HOOKS=False)
+    @override_settings(WAGTAILFORMS_ENABLE_BUILTIN_HOOKS=False)
     def test_builtins_can_be_disabled(self):
         hook_fns = hooks.get_hooks("process_form_submission")
         self.assertEqual(hook_fns, [])
 
-    @override_settings(WAGTAILSTREAMFORMS_ENABLE_BUILTIN_HOOKS=False)
+    @override_settings(WAGTAILFORMS_ENABLE_BUILTIN_HOOKS=False)
     def test_setting_only_removes_builtins(self):
         def custom_hook():
             pass

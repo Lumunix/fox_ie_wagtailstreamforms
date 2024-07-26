@@ -1,7 +1,7 @@
 Basic Usage
 ===========
 
-Just add the ``wagtailstreamforms.blocks.WagtailFormBlock()`` in any of your streamfields:
+Just add the ``wagtailforms.blocks.WagtailFormBlock()`` in any of your streamfields:
 
 .. code-block:: python
 
@@ -36,6 +36,6 @@ Usage:
 
 ::
 
-    {% load streamforms_tags %}
-    {% streamforms_form slug="form-slug" reference="some-very-unique-reference" action="." %}
+    {% load forms_tags %}
+    {% forms_form slug="form-slug" reference="some-very-unique-reference" action="." %}
 

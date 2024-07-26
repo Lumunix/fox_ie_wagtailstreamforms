@@ -6,11 +6,11 @@ Such as details of where to email the form submission. When this is needed we ha
 provided the means to define your own model.
 
 To enable this you need to declare a model that inherits from
-``wagtailstreamforms.models.AbstractFormSetting``:
+``wagtailforms.models.AbstractFormSetting``:
 
 .. code-block:: python
   
-    from wagtailstreamforms.models.abstract import AbstractFormSetting
+    from wagtailforms.models.abstract import AbstractFormSetting
 
     class AdvancedFormSetting(AbstractFormSetting):
         to_address = models.EmailField()
@@ -21,10 +21,10 @@ Once that's done you need to add a setting to point to that model:
 
     # the model defined to save advanced form settings
     # in the format of 'app_label.model_class'.
-    # Model must inherit from 'wagtailstreamforms.models.AbstractFormSetting'.
-    WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL = 'myapp.AdvancedFormSetting'
+    # Model must inherit from 'wagtailforms.models.AbstractFormSetting'.
+    WAGTAILFORMS_ADVANCED_SETTINGS_MODEL = 'myapp.AdvancedFormSetting'
 
-A button will appear on the Streamforms listing view ``Advanced`` which will
+A button will appear on the forms listing view ``Advanced`` which will
 allow you to edit that model.
 
 Usage

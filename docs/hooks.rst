@@ -6,10 +6,10 @@ Submission Hooks
 Form submission hooks are used to process the cleaned_data of the form after a successful post.
 The only defined one is that to save the form submission data.
 
-.. literalinclude:: ../wagtailstreamforms/wagtailstreamforms_hooks.py
+.. literalinclude:: ../wagtailforms/wagtailforms_hooks.py
    :pyobject: save_form_submission_data
 
-You can disable this by setting ``WAGTAILSTREAMFORMS_ENABLE_BUILTIN_HOOKS=False`` in your ``settings.py``
+You can disable this by setting ``WAGTAILFORMS_ENABLE_BUILTIN_HOOKS=False`` in your ``settings.py``
 
 Create your own hook
 --------------------
@@ -23,7 +23,7 @@ You can easily define additional hooks to perform a vast array of actions like
 
 Here is a simple example to send an email with the submission data.
 
-Create a ``wagtailstreamforms_hooks.py`` in the root of one of your apps and add the following.
+Create a ``wagtailforms_hooks.py`` in the root of one of your apps and add the following.
 
 .. code-block:: python
 
@@ -31,7 +31,7 @@ Create a ``wagtailstreamforms_hooks.py`` in the root of one of your apps and add
     from django.core.mail import EmailMessage
     from django.template.defaultfilters import pluralize
 
-    from wagtailstreamforms.hooks import register
+    from wagtailforms.hooks import register
 
     @register('process_form_submission')
     def email_submission(instance, form):

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fox_ie_wagtailstreamforms"
+name = "wagtailforms"
 version = "1.0.0"
 description = "Wagtail forms in a streamfield"
 authors = ["Lumunix <lumunix@icloud.com>"]
@@ -9,7 +9,7 @@ keywords = ["wagtail", "streamfield", "forms","fox-ie"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-wagtail = ">=5.2,<=6.1.2"
+wagtail = ">=5.2,<=6.1.3"
 Unidecode = ">=0.04.14,<2.0"
 wagtail-generic-chooser = ">=0.5.0,<0.7"
 

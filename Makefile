@@ -11,8 +11,8 @@ docs:
 	$(MAKE) -C docs html
 
 format:
-	isort --recursive wagtailstreamforms tests
-	black wagtailstreamforms/ tests/
+	isort --recursive wagtailforms tests
+	black wagtailforms/ tests/
 
 #
 # Utility

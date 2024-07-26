@@ -1,6 +1,6 @@
 from django import forms
 
-from fox_ie_wagtailstreamforms import fields
+from wagtailforms import fields
 
 from ..test_case import AppTestCase
 

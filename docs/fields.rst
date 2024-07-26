@@ -28,13 +28,13 @@ Adding new fields
 -----------------
 
 You can also register your own fields which will be added to the form builders StreamField.
-First you need to create the file ``wagtailstreamforms_fields.py`` in the root of an app in your project
+First you need to create the file ``wagtailforms_fields.py`` in the root of an app in your project
 and add the following as an example:
 
 .. code-block:: python
 
     from django import forms
-    from wagtailstreamforms.fields import BaseField, register
+    from wagtailforms.fields import BaseField, register
 
     @register('mytext')
     class CustomTextField(BaseField):
@@ -155,13 +155,13 @@ Overriding an existing field
 ----------------------------
 
 .. important::
-   When overriding an existing field make sure the app that has the ``wagtailstreamforms_fields.py``
-   file appears after ``wagtailstreamforms`` in your ``INSTALLED_APPS`` or the field will not be overridden.
+   When overriding an existing field make sure the app that has the ``wagtailforms_fields.py``
+   file appears after ``wagtailforms`` in your ``INSTALLED_APPS`` or the field will not be overridden.
 
 You can replace one of the form fields by simply using an existing name in the ``@register`` decorator.
 Suppose you want to add a rows attribute to the textarea widget of the ``multiline`` field.
 
-In your ``wagtailstreamforms_fields.py`` file:
+In your ``wagtailforms_fields.py`` file:
 
 .. code-block:: python
 
@@ -180,7 +180,7 @@ you can automatically add this with a simple if statement to detect if the form 
 
    <form{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} action="...
 
-Files will be uploaded using your default storage class to the path ``streamforms/`` and are listed
+Files will be uploaded using your default storage class to the path ``forms/`` and are listed
 along with the form submissions. When a submission is deleted all files are also deleted from the storage.
 
 Examples
@@ -199,7 +199,7 @@ An example model choice field of users.
    from django.contrib.auth.models import User
 
    from wagtail.core import blocks
-   from wagtailstreamforms.fields import BaseField, register
+   from wagtailforms.fields import BaseField, register
 
 
    @register('user')
@@ -237,7 +237,7 @@ the same for any given regex pattern.
    from django import forms
 
    from wagtail.core import blocks
-   from wagtailstreamforms.fields import BaseField, register
+   from wagtailforms.fields import BaseField, register
 
    @register('regex_validated')
    class RegexValidatedField(BaseField):
@@ -296,13 +296,13 @@ Django ``settings.py`` file:
     NOCAPTCHA = True
 
 
-``wagtailstreamforms_fields.py`` file:
+``wagtailforms_fields.py`` file:
 
 .. code-block:: python
 
     from captcha.fields import ReCaptchaField
     from wagtail.core import blocks
-    from wagtailstreamforms.fields import BaseField, register
+    from wagtailforms.fields import BaseField, register
 
     @register('recaptcha')
     class ReCaptchaField(BaseField):
@@ -331,5 +331,5 @@ Useful Resources
 Reference
 ---------
 
-.. autoclass:: wagtailstreamforms.fields.BaseField
+.. autoclass:: wagtailforms.fields.BaseField
    :members:

@@ -1,6 +1,6 @@
 from django.db import models
 
-from fox_ie_wagtailstreamforms.models import Form, FormSubmission
+from wagtailforms.models import Form, FormSubmission
 
 from ..test_case import AppTestCase
 

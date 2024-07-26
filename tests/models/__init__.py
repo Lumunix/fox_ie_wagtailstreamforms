@@ -1,7 +1,7 @@
 from django.db import models
 
-from fox_ie_wagtailstreamforms.fields import HookSelectField
-from fox_ie_wagtailstreamforms.models import AbstractFormSetting
+from wagtailforms.fields import HookSelectField
+from wagtailforms.models import AbstractFormSetting
 
 
 class ValidFormSettingsModel(AbstractFormSetting):

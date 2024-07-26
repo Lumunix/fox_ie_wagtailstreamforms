@@ -3,8 +3,8 @@ from django.test import override_settings
 from django.test.client import Client
 from wagtail.models import Page
 
-from fox_ie_wagtailstreamforms.models import Form
-from fox_ie_wagtailstreamforms.wagtail_hooks import process_form
+from wagtailforms.models import Form
+from wagtailforms.wagtail_hooks import process_form
 
 from ..test_case import AppTestCase
 
@@ -36,7 +36,7 @@ class TestHook(AppTestCase):
 
         self.assertIsNone(response)
 
-    @override_settings(WAGTAILSTREAMFORMS_ENABLE_FORM_PROCESSING=False)
+    @override_settings(WAGTAILFORMS_ENABLE_FORM_PROCESSING=False)
     def test_hook_disabled_when_setting_false(self):
         form = self.test_form()
         fake_request = self.rf.post(

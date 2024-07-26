@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "wagtail_modeladmin",
     "wagtail.contrib.settings",
     "taggit",
-    "fox_ie_wagtailstreamforms",
+    "wagtailforms",
     "tests",
 ]
 
@@ -70,5 +70,5 @@ STATIC_URL = "/static/"
 
 LOGIN_URL = reverse_lazy("admin:login")
 
-WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL = "tests.ValidFormSettingsModel"
+WAGTAILFORMS_ADVANCED_SETTINGS_MODEL = "tests.ValidFormSettingsModel"
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

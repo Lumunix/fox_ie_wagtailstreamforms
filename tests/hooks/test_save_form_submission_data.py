@@ -3,8 +3,8 @@ import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.http import QueryDict
 
-from fox_ie_wagtailstreamforms.models import Form
-from fox_ie_wagtailstreamforms.wagtailstreamforms_hooks import save_form_submission_data
+from wagtailforms.models import Form
+from wagtailforms.wagtailforms_hooks import save_form_submission_data
 
 from ..test_case import AppTestCase
 
@@ -13,7 +13,7 @@ class TestHook(AppTestCase):
     def test_form(self):
         form = Form.objects.create(
             title="Form",
-            template_name="streamforms/form_block.html",
+            template_name="forms/form_block.html",
             slug="form",
             fields=json.dumps(
                 [

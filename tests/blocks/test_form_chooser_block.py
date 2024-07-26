@@ -1,5 +1,5 @@
-from fox_ie_wagtailstreamforms.blocks import FormChooserBlock
-from fox_ie_wagtailstreamforms.models import Form
+from wagtailforms.blocks import FormChooserBlock
+from wagtailforms.models import Form
 
 from ..test_case import AppTestCase
 

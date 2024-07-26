@@ -1,4 +1,4 @@
-from fox_ie_wagtailstreamforms.blocks import InfoBlock
+from wagtailforms.blocks import InfoBlock
 
 from ..test_case import AppTestCase
 

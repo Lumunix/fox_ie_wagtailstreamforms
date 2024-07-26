@@ -3,7 +3,7 @@ from datetime import timedelta
 from django.core.management import call_command
 
 from tests.test_case import AppTestCase
-from fox_ie_wagtailstreamforms.models import Form, FormSubmission
+from wagtailforms.models import Form, FormSubmission
 
 
 class Tests(AppTestCase):

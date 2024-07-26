@@ -4,9 +4,9 @@ from django.test import override_settings
 from django.utils.translation import gettext_lazy as _
 from wagtail.models import Page
 
-from fox_ie_wagtailstreamforms.conf import get_setting
-from fox_ie_wagtailstreamforms.fields import HookSelectField
-from fox_ie_wagtailstreamforms.models import Form, FormSubmission
+from wagtailforms.conf import get_setting
+from wagtailforms.fields import HookSelectField
+from wagtailforms.models import Form, FormSubmission
 
 from ..test_case import AppTestCase
 
@@ -83,7 +83,7 @@ class ModelPropertyTests(AppTestCase):
             cm.exception.message_dict, {"slug": ["Form with this Slug already exists."]}
         )
 
-    @override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL=None)
+    @override_settings(WAGTAILFORMS_ADVANCED_SETTINGS_MODEL=None)
     def test_copy(self):
         copied = self.test_form.copy()
 
@@ -120,9 +120,9 @@ class ModelPropertyTests(AppTestCase):
 
         self.assertEqual(FormSubmission.objects.filter(form=copied).count(), 0)
 
-    @override_settings(WAGTAILSTREAMFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
+    @override_settings(WAGTAILFORMS_ADVANCED_SETTINGS_MODEL="tests.ValidFormSettingsModel")
     def test_copy_copies_advanced_settings(self):
-        from fox_ie_wagtailstreamforms.utils.loading import get_advanced_settings_model
+        from wagtailforms.utils.loading import get_advanced_settings_model
 
         SettingsModel = get_advanced_settings_model()
 

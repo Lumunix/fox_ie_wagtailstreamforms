@@ -1,8 +1,8 @@
 from django import forms
 
-from fox_ie_wagtailstreamforms.fields import get_fields
-from fox_ie_wagtailstreamforms.forms import FormBuilder
-from fox_ie_wagtailstreamforms.models import Form
+from wagtailforms.fields import get_fields
+from wagtailforms.forms import FormBuilder
+from wagtailforms.models import Form
 
 from ..test_case import AppTestCase
 

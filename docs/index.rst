@@ -1,9 +1,9 @@
-.. Wagtail Streamforms documentation master file, created by
+.. Wagtail Forms documentation master file, created by
    sphinx-quickstart on Sat Oct 14 14:40:45 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Wagtail Streamforms
+Wagtail forms
 ===================
 
 Allows you to build forms in the CMS admin area and add them to any StreamField in your site.
@@ -12,28 +12,6 @@ of file fields. Form submissions are controlled by hooks that you can add that p
 Templates can be created which will then appear as choices when you build your form,
 allowing you to display and submit a form however you want.
 
-Backwards Compatibility
------------------------
-
-.. important::
-   Please note that due to this package being virtually re-written for version 3, you cannot upgrade any existing
-   older version of this package to version 3 and onwards.
-   If you have an existing version installed less than 3 then you will need to completely remove it including
-   tables and any migrations that were applied in the databases ``django_migrations`` table.
-
-Older versions:
-
-If you are using a version of wagtail 1.x, then the latest compatible version of this package is 1.6.3:
-
-.. code:: bash
-
-    $ pip install wagtailstreamforms<2
-
-Other wise you must install a version of this package from 2 onwards:
-
-.. code:: bash
-
-    $ pip install wagtailstreamforms>=2
 
 What else is included?
 ----------------------

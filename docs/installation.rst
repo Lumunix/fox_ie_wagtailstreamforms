@@ -1,11 +1,11 @@
 Installation
 ============
 
-Wagtail Streamform is available on PyPI - to install it, just run:
+Wagtail Forms is available on PyPI - to install it, just run:
 
 .. code-block:: python
   
-    pip install wagtailstreamforms
+    pip install wagtailforms
 
 Once thats done you need to add the following to your ``INSTALLED_APPS`` settings:
 
@@ -14,7 +14,7 @@ Once thats done you need to add the following to your ``INSTALLED_APPS`` setting
     INSTALLED_APPS = [
         ...
         'wagtail.contrib.modeladmin',
-        'wagtailstreamforms'
+        'wagtailforms'
         ...
     ]
 
@@ -24,4 +24,4 @@ Run migrations:
 
     python manage.py migrate
 
-Go to your cms admin area and you will see the ``Streamforms`` section.
+Go to your cms admin area and you will see the ``Forms`` section.

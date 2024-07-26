@@ -1,8 +1,8 @@
 from django import forms
 from django.core.exceptions import ImproperlyConfigured
 
-from fox_ie_wagtailstreamforms import fields
-from fox_ie_wagtailstreamforms.streamfield import FormFieldsStreamField
+from wagtailforms import fields
+from wagtailforms.streamfield import FormFieldsStreamField
 
 from ..test_case import AppTestCase
 

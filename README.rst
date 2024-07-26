@@ -1,4 +1,5 @@
-Wagtail StreamForms
+clear
+Wagtail Forms
 ===================
 
 |tests| |Codecov| |pypi| |github|
@@ -30,17 +31,17 @@ What else is included?
 Documentation
 -------------
 
-Can be found on `readthedocs <http://wagtailstreamforms.readthedocs.io/>`_.
+Can be found on `readthedocs <http://wagtailforms.readthedocs.io/>`_.
 
 Screenshots
 -----------
 
-.. figure:: http://wagtailstreamforms.readthedocs.io/en/latest/_images/screen_1.png
+.. figure:: http://wagtailforms.readthedocs.io/en/latest/_images/screen_1.png
    :width: 728 px
 
    Example Front End
 
-.. figure:: http://wagtailstreamforms.readthedocs.io/en/latest/_images/screen_3.png
+.. figure:: http://wagtailforms.readthedocs.io/en/latest/_images/screen_3.png
    :width: 728 px
 
    Form Fields Selection
@@ -52,13 +53,13 @@ Clone the repo
 
 .. code:: bash
 
-    $ git clone https://github.com/labd/wagtailstreamforms.git
+    $ git clone https://github.com/lumunix/wagtailforms.git
 
 Run the docker container
 
 .. code:: bash
 
-    $ cd wagtailstreamforms
+    $ cd wagtailforms
     $ docker-compose up
 
 Create yourself a superuser
@@ -70,12 +71,12 @@ Create yourself a superuser
 
 Go to http://127.0.0.1:8000
 
-.. |tests| image:: https://github.com/labd/wagtailstreamforms/workflows/Python%20Tests/badge.svg
-   :target: https://github.com/labd/wagtailstreamforms/actions?query=workflow%3A%22Python+Tests%22
-.. |Codecov| image:: https://codecov.io/gh/labd/wagtailstreamforms/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/labd/wagtailstreamforms
-.. |pypi| image:: https://img.shields.io/pypi/v/wagtailstreamforms.svg
-   :target: https://pypi.org/project/wagtailstreamforms/
-.. |github| image:: https://img.shields.io/github/stars/labd/wagtailstreamforms.svg?style=social&logo=github
-   :target: https://github.com/labd/wagtailstreamforms/stargazers
+.. |tests| image:: https://github.com/lumunix/wagtailforms/workflows/Python%20Tests/badge.svg
+   :target: https://github.com/lumunix/wagtailforms/actions?query=workflow%3A%22Python+Tests%22
+.. |Codecov| image:: https://codecov.io/gh/lumunix/wagtailforms/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/lumunix/wagtailforms
+.. |pypi| image:: https://img.shields.io/pypi/v/wagtailforms.svg
+   :target: https://pypi.org/project/wagtailforms/
+.. |github| image:: https://img.shields.io/github/stars/lumunix/wagtailforms.svg?style=social&logo=github
+   :target: https://github.com/lumunix/wagtailforms/stargazers
 
